@@ -24,14 +24,6 @@ def all_winter_holiday_supplies(holiday_hash)
 holiday_hash[:winter].values.flatten
 end
 
-def all_holidays_with_bbq(holiday_hash)
-
-  holiday_hash.map do |season, holiday|
-    holiday.map do |holiday, supply|
-      holiday if supply.include?("BBQ")
-    end
-  end.flatten.compact
-end
 
 def all_supplies_in_holidays(holiday_hash)
 holiday_hash.each do |season, holiday|
@@ -43,6 +35,14 @@ end
 end
 
 
+def all_holidays_with_bbq(holiday_hash)
+
+  holiday_hash.map do |season, holiday|
+    holiday.map do |holiday, supply|
+      holiday if supply.include?("BBQ")
+    end
+  end.flatten.compact
+end
 
 
 
